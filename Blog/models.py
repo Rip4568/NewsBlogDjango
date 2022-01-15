@@ -99,8 +99,3 @@ class InlineImage(admin.TabularInline):
 
 class CelebrityAdmin(admin.ModelAdmin):
     inlines = [InlineImage]
-
-
-
-
-

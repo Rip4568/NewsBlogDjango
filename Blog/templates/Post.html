@@ -39,7 +39,7 @@
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-white" id="sec-24a3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="{% static 'images/default-logo.png' %}" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'images/logo-news.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
@@ -102,7 +102,7 @@
           <div class="u-carousel-inner u-gallery-inner" role="listbox">
             <div class="u-active u-carousel-item u-gallery-item">
               <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/1.svg">
+                <img class="u-back-image u-expanded" src="{% static 'images/default-image.png' %}">
               </div>
               <div class="u-grey-90 u-over-slide u-over-slide-1">
                 <h3 class="u-gallery-heading">Sample Title 1</h3>
@@ -111,7 +111,7 @@
             </div>
             <div class="u-carousel-item u-gallery-item">
               <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src="images/1.svg">
+                <img class="u-back-image u-expanded" src="{% static 'images/default-image.png' %}">
               </div>
               <div class="u-grey-90 u-over-slide u-over-slide-2">
                 <h3 class="u-gallery-heading">Sample Title 2</h3>
@@ -157,7 +157,7 @@
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-23 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <div alt="" data-image-width="256" data-image-height="256">
-                    <img src="{{post.get_reporter.get_foto.url}}">
+                    <img src="{{post.get_reporter.get_foto.url}}" data-image-width="256" data-image-height="256">
                   </div>
                 </div>
               </div>

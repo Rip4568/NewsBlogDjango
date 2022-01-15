@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 #Importação padrão do django para as rotas e o site de administração
+from timeit import repeat
 from django.contrib import admin
 from django.http.response import HttpResponse
-from django.urls import path
+from django.urls import path,re_path
 #Importação das configurações para prover arquivos staticos
 from django.conf.urls.static import static
 from django.conf import settings
