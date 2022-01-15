@@ -17,6 +17,7 @@ class Reporter(models.Model):
     email = models.EmailField(max_length=254)
     link_social = models.CharField(max_length=100)
     foto = models.ImageField(upload_to='uploads/')
+    resumo = models.TextField()
     
     def __str__(self):
         return self.nome
@@ -35,6 +36,9 @@ class Reporter(models.Model):
     
     def get_foto(self):
         return self.foto
+    
+    def get_resumo(self):
+        return self.resumo
     #def get_absolute_url(self):
     #   return reverse("Post_detail", kwargs={"pk": self.pk})
 
@@ -64,17 +68,24 @@ class Post(models.Model):
     def get_titulo(self):
         return self.titulo
 
-    def get_autor(self):
-        return self.autor
-    
+    def get_resumo(self):
+        return self.resumo
+
     def get_data_criacao(self):
         return self.criado_em
+
+    def get_autor(self):
+        return self.autor
     
     def get_banner_imagem(self):
         return self.banner
     
     def get_conteudo(self):
-        return self.conteudoç
+        return self.conteudo
+
+    def get_reporter(self):
+        return self.reporter
+
 
 class Celebrity(models.Model):#Modelo Texto 
     name = models.CharField(max_length=255)

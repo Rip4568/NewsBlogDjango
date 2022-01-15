@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from Blog.models import Post
 # Create your views here.
 
@@ -14,8 +13,8 @@ def home(request):
 def post(request,my_id):
     post = Post.objects.get(id=my_id)
     variaveis = {
-        'post':post
+        'post':post,
     }
-    return render(request,'static/Post.html',variaveis)
+    return render(request,'Post.html',variaveis)
 
 

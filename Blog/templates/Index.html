@@ -78,23 +78,24 @@
           
 
           <!--blog_post-->
-          <div class="u-repeater u-repeater-1">
-            <div class="u-align-center u-blog-post u-container-style u-repeater-item">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <a class="u-post-header-link" href="{% static 'Post.html' %}"><!--blog_post_image {% static 'blog/post-5.html' %}-->
-                  <img alt="" class="u-blog-control u-image u-image-default u-image-1" src="{% static 'images/2.jpeg' %}"><!--/blog_post_image-->
-                </a><!--blog_post_header-->
-                <h1 class="u-blog-control u-text u-text-body-alt-color u-text-1">
-                  <a class="u-post-header-link" href="{% static 'Post.html' %}"><!--blog_post_header_content-->Post 6 Headline<!--/blog_post_header_content--></a>
-                </h1><!--/blog_post_header--><!--blog_post_content-->
-                <div class="u-blog-control u-post-content u-text u-text-body-alt-color u-text-2"><!--blog_post_content_content-->Amostra de texto pequena. Lorem ipsum dolor sit amet.<!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
-                <div class="u-blog-control u-metadata u-text-body-alt-color u-metadata-1"><!--blog_post_metadata_date-->
-                  <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Tue Jan 11 2022<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date-->
-                </div><!--/blog_post_metadata--><!--blog_post_readmore-->
-                <a href="{% static 'Post.html' %}" class="u-blog-control u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"Read More","defaultValue":"Ler Mais"}--><!--/options_json-->Read More<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+          {% for post in posts %}<!--acessando todos os post dentro de posts passado como parametro no views.index-->
+            <div class="u-repeater u-repeater-1">
+              <div class="u-align-center u-blog-post u-container-style u-repeater-item">
+                <div class="u-container-layout u-similar-container u-container-layout-1">
+                  <a class="u-post-header-link" href="{{post.id}}"><!--blog_post_image {% static 'blog/post-5.html' %}-->
+                    <img alt="" class="u-blog-control u-image u-image-default u-image-1" src={{post.get_banner_imagem.url}}><!--/blog_post_image-->
+                  </a><!--blog_post_header-->
+                  <h1 class="u-blog-control u-text u-text-body-alt-color u-text-1">
+                    <a class="u-post-header-link" href="{{post.id}}"><!--blog_post_header_content-->{{post.get_titulo}}<!--/blog_post_header_content--></a>
+                  </h1><!--/blog_post_header--><!--blog_post_content-->
+                  <div class="u-blog-control u-post-content u-text u-text-body-alt-color u-text-2"><!--blog_post_content_content-->{{post.get_resumo | safe}} <!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
+                  <div class="u-blog-control u-metadata u-text-body-alt-color u-metadata-1"><!--blog_post_metadata_date-->
+                    <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content--> data de criacao aqui porem vou mostrar o id de cada post > {{post.id | safe}} <!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date-->
+                  </div><!--/blog_post_metadata--><!--blog_post_readmore-->
+                  <a href="{{post.id}}" class="u-blog-control u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"Read More","defaultValue":"Ler Mais"}--><!--/options_json-->Leia Mais<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+                </div>
               </div>
-            </div>
-            <!--/blog_post-->
+          {% endfor %}
 
           </div>
         </div><!--/blog-->

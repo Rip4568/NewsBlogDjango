@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html style="font-size: 16px;">
   <head>
@@ -7,10 +8,10 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Post</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Post.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'Post.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
@@ -22,7 +23,7 @@
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
-		"logo": "images/default-logo.png",
+		"logo": "{% static 'images/default-logo.png' %}",
 		"sameAs": [
 				"https://facebook.com/name",
 				"https://twitter.com/name"
@@ -38,7 +39,7 @@
   </head>
   <body class="u-body"><header class="u-clearfix u-header u-white" id="sec-24a3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-          <img src="images/default-logo.png" class="u-logo-image u-logo-image-1">
+          <img src="{% static 'images/default-logo.png' %}" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
@@ -50,7 +51,7 @@
             </a>
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Sobre.html" style="padding: 10px 20px;">Sobre</a>
+            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="{% static 'Sobre.html' %}" style="padding: 10px 20px;">Sobre</a>
 </li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Contato</a>
 </li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Home</a>
 </li></ul>
@@ -59,10 +60,10 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sobre.html" style="padding: 10px 20px;">Sobre</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Contato</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Home</a>
-</li></ul>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% static 'Sobre.html' %}" style="padding: 10px 20px;">Sobre</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Contato</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Home</a>
+              </li></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -76,22 +77,27 @@
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h1 class="u-align-center u-text u-text-body-alt-color u-text-default u-text-1">Amostra de Título</h1>
+                  <h1 class="u-align-center u-text u-text-body-alt-color u-text-default u-text-1">{{post.get_titulo}}</h1>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <img class="u-image u-image-round u-radius-10 u-image-1" src="images/default-image.jpg" alt="" data-image-width="1280" data-image-height="853">
-        <p class="u-text u-text-body-alt-color u-text-2">Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Amostra de texto. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+        <img class="u-image u-image-round u-radius-10 u-image-1" src="{{post.get_banner_imagem.url|safe}}" alt="" data-image-width="1280" data-image-height="853">
+        <!--<p class="u-text u-text-body-alt-color u-text-2">{{post.get_conteudo|safe}}</p>-->
+        <h6 class="u-text u-text-body-alt-color u-text-2">{{post.get_conteudo|safe}}</h2>
       </div>
     </section>
+
+
+    <!--comeca aqui a rolagem das fotos-->
     <section class="u-clearfix u-gradient u-section-2" id="sec-e838">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-carousel u-gallery u-layout-carousel u-lightbox u-no-transition u-show-text-always u-gallery-1" data-interval="5000" data-u-ride="carousel" id="carousel-d889">
           <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
             <li data-u-target="#carousel-d889" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
-            <li data-u-target="#carousel-d889" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+            <li data-u-target="#carousel-d889" data-u-slide-to="0" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+            
           </ol>
           <div class="u-carousel-inner u-gallery-inner" role="listbox">
             <div class="u-active u-carousel-item u-gallery-item">
@@ -99,7 +105,7 @@
                 <img class="u-back-image u-expanded" src="images/1.svg">
               </div>
               <div class="u-grey-90 u-over-slide u-over-slide-1">
-                <h3 class="u-gallery-heading">Sample Title</h3>
+                <h3 class="u-gallery-heading">Sample Title 1</h3>
                 <p class="u-gallery-text">Sample Text</p>
               </div>
             </div>
@@ -108,38 +114,41 @@
                 <img class="u-back-image u-expanded" src="images/1.svg">
               </div>
               <div class="u-grey-90 u-over-slide u-over-slide-2">
-                <h3 class="u-gallery-heading">Sample Title</h3>
+                <h3 class="u-gallery-heading">Sample Title 2</h3>
                 <p class="u-gallery-text">Sample Text</p>
               </div>
             </div>
           </div>
+          <!--controle das setas direcionais-->
           <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1" href="#carousel-d889" role="button" data-u-slide="prev">
             <span aria-hidden="true">
               <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
+                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
             </span>
             <span class="sr-only">
               <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
+                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
             </span>
           </a>
           <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2" href="#carousel-d889" role="button" data-u-slide="next">
             <span aria-hidden="true">
               <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
             </span>
             <span class="sr-only">
               <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
             </span>
           </a>
         </div>
       </div>
     </section>
+    <!--Termina aqui as rolagens das fotos-->
+
     <section class="u-clearfix u-palette-1-dark-3 u-section-3" id="sec-d9f6">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-100 u-layout-wrap u-layout-wrap-1">
@@ -147,14 +156,16 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
             <div class="u-layout-row">
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-23 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <div alt="" class="u-image u-image-circle u-image-1" src="" data-image-width="256" data-image-height="256"></div>
+                  <div alt="" data-image-width="256" data-image-height="256">
+                    <img src="{{post.get_reporter.get_foto.url}}">
+                  </div>
                 </div>
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-37 u-layout-cell-2">
                 <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-top-xs u-container-layout-2">
-                  <h2 class="u-text u-text-default u-text-1">Escritor da Noticia</h2>
-                  <p class="u-text u-text-2">Texto com alguma ou nenhuma informação sobre a pessoa, gostos e costumes</p>
-                  <a href="" class="u-btn u-button-style u-btn-1">Linkedin/Conta social&nbsp;</a>
+                  <h2 class="u-text u-text-default u-text-1">{{post.get_reporter.get_nome}}</h2><!--Escritor da Noticia-->
+                  <p class="u-text u-text-2">{{post.get_reporter.get_resumo}}</p>
+                  <a href="{{post.get_reporter.get_link_social}}" class="u-btn u-button-style u-btn-1" target="_blank">Linkedin/Conta social&nbsp;</a>
                 </div>
               </div>
             </div>
