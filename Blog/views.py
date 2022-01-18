@@ -3,7 +3,7 @@ from Blog.models import Post
 # Create your views here.
 
 def home(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().reverse()
     variaveis = {
         'posts':posts,
     }
