@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-()k1bm+y$uj=1lktzv4+u$p7qyp%&mbcg7v8$&(&*g7jt*^txc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']#altear para acesso restrito ao heroku
 
 
 # Application definition
@@ -132,5 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+
 
 #retirado para teste STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'#arquivos cachaveis e suporte para comprensão de arquivos
