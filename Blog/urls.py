@@ -6,4 +6,4 @@ urlpatterns = [
     path('',home),
     path('<int:my_id>',post),
     #re_path(r'^static/<int:my_id$',post)
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+] #+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

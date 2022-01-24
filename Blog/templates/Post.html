@@ -83,7 +83,7 @@
             </div>
           </div>
         </div>
-        <img class="u-image u-image-round u-radius-10 u-image-1" src="{{post.get_banner_imagem.url|safe}}" alt="" data-image-width="1280" data-image-height="853">
+        <img class="u-image u-image-round u-radius-10 u-image-1" src="{{post.get_banner_imagem.url|safe}}" alt="../static/images/default-image.png" data-image-width="1280" data-image-height="853">
         <!--<p class="u-text u-text-body-alt-color u-text-2">{{post.get_conteudo|safe}}</p>-->
         <h6 class="u-text u-text-body-alt-color u-text-2">{{post.get_conteudo|safe}}</h2>
       </div>
@@ -149,6 +149,11 @@
     </section>
     <!--Termina aqui as rolagens das fotos-->
 
+
+
+
+    <!--Começa aqui as informações do escritor da noticia-->
+
     <section class="u-clearfix u-palette-1-dark-3 u-section-3" id="sec-d9f6">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-100 u-layout-wrap u-layout-wrap-1">
@@ -165,7 +170,7 @@
                 <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-top-xs u-container-layout-2">
                   <h2 class="u-text u-text-default u-text-1">{{post.get_reporter.get_nome}}</h2><!--Escritor da Noticia-->
                   <p class="u-text u-text-2">{{post.get_reporter.get_resumo}}</p>
-                  <a href="/{{post.get_reporter.get_link_social|safe}}/" class="u-btn u-button-style u-btn-1" target="_blank" rel="noopener noreferrer" >Linkedin/Conta social&nbsp;</a>
+                  <a href="https:/{{post.get_reporter.get_link_social}}/" class="u-btn u-button-style u-btn-1" target="_blank" rel="noopener noreferrer" >Linkedin/Conta social&nbsp;</a>
                 </div>
               </div>
             </div>
