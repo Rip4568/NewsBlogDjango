@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+#Nesse exato momento o site se encontra em perfeito funcionamento
 import os
 import sys
 
