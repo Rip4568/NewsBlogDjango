@@ -5,9 +5,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.base import Model
 from django.db.models.deletion import PROTECT
+from django.forms import ImageField
 # Create your models here.
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+
+import PIL
 
 
 
@@ -18,6 +21,7 @@ class Reporter(models.Model):
     link_social = models.CharField(max_length=100)
     foto = models.ImageField(upload_to='uploads/')
     resumo = models.TextField()
+    foto_de_perfil = models.ImageField(upload_to="uploads/")
     
     def __str__(self):
         return self.nome
@@ -36,6 +40,9 @@ class Reporter(models.Model):
     
     def get_foto(self):
         return self.foto
+    
+    def get_foto_de_perfil(self):
+        return self.foto_de_perfil
     
     def get_resumo(self):
         return self.resumo
@@ -56,11 +63,7 @@ class Post(models.Model):
     #autor = models.ForeignKey(User, on_delete=models.PROTECT)
     criado_em = models.DateField(auto_now_add=True)#para que serve _("")
     banner = models.ImageField(upload_to='media/')
-    reporter = models.ForeignKey(Reporter, on_delete=models.PROTECT)#Testar essa funcionalidade depois
-    #imagem = models.ImageField()
-    #class Meta:
-        #verbose_name = ("Post")
-        #verbose_name_plural = ("Posts")
+    reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)#Testar essa funcionalidade depois
 
     def __str__(self):
         return self.titulo
