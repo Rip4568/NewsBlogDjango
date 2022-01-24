@@ -19,7 +19,6 @@ class Reporter(models.Model):
     entrou_em = models.DateField(auto_now_add=True)
     email = models.EmailField(max_length=254)
     link_social = models.CharField(max_length=100)
-    foto = models.ImageField(upload_to='uploads/')
     resumo = models.TextField()
     foto_de_perfil = models.ImageField(upload_to="uploads/")
     
