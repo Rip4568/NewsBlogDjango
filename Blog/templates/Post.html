@@ -162,15 +162,21 @@
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-23 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <div alt="" data-image-width="256" data-image-height="256">
-                    <img src="{{post.get_reporter.get_foto_de_perfil.url | safe}}" data-image-width="256" data-image-height="256">
+                    
+                    <img src="{{post.get_reporter.get_foto_de_perfil.url | safe}}" data-image-width="256" data-image-height="256" style="max-height:200px" height="180em">
+                  
                   </div>
                 </div>
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-37 u-layout-cell-2">
                 <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-top-xs u-container-layout-2">
+                  
                   <h2 class="u-text u-text-default u-text-1">{{post.get_reporter.get_nome}}</h2><!--Escritor da Noticia-->
+                  
                   <p class="u-text u-text-2">{{post.get_reporter.get_resumo}}</p>
+                  
                   <a href="https:/{{post.get_reporter.get_link_social}}/" class="u-btn u-button-style u-btn-1" target="_blank" rel="noopener noreferrer" >Linkedin/Conta social&nbsp;</a>
+                
                 </div>
               </div>
             </div>
