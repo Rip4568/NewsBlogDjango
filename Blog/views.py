@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from Blog.models import Post
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def home(request):
@@ -12,8 +13,14 @@ def home(request):
 
 def post(request,my_id):
     post = Post.objects.get(id=my_id)
+    post2 = get_object_or_404(Post, pk=my_id)
+    contador = list()
+    for i in range(1,10):
+        contador.append(i)
+    
     variaveis = {
         'post':post,
+        'contador':contador,
     }
     return render(request,'Post.html',variaveis)
 

@@ -122,19 +122,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+urlhttp = 'http://localhost:8001/'
+#STATIC_URL = 'static/'
+#STATIC_URL = urlhttp + 'staticfiles/'
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles/')
+#STATIC_ROOT = os.path.join(BASE_DIR,'http://localhost:8001/staticfiles/')
+STATIC_ROOT = '/staticfiles/'
 
+#MEDIA_URL = 'http://localhost:8001/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR,'http://localhost:8001/media/')
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_ROOT = 'staticfiles/media/'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+#CKEDITOR_UPLOAD_PATH = 'http://localhost:8001/media/uploads/'
 
 # Default primary key field type    
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 
 

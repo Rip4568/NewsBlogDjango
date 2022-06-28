@@ -2,6 +2,7 @@ from django.urls import path,include,re_path
 from .views import home,post
 from django.conf.urls.static import static
 from django.conf import settings
+from django.http import Http404
 urlpatterns = [
     path('',home),
     path('<int:my_id>',post),
