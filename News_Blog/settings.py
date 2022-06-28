@@ -13,6 +13,9 @@ import os
 from pathlib import Path
 from decouple import config,Csv#utilizar o Csv
 from dj_database_url import parse as dburl
+import django_on_heroku
+django_on_heroku.settings(locals())
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-()k1bm+y$uj=1lktzv4+u$p7qyp%&mbcg7v8$&(&*g7jt*^txc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG',default=False,cast=bool)
+#DEBUG = config('DEBUG',default=False,cast=bool)
+DEBUG = False
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS',default=[],cast=Csv())#['*']#altear para acesso restrito ao heroku
 
