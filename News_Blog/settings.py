@@ -14,7 +14,7 @@ from pathlib import Path
 from decouple import config,Csv#utilizar o Csv
 from dj_database_url import parse as dburl
 import django_on_heroku
-django_on_heroku.settings(locals())
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-()k1bm+y$uj=1lktzv4+u$p7qyp%&mbcg7v8$&(&*g7jt*^txc
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = config('DEBUG',default=False,cast=bool)
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS',default=[],cast=Csv())#['*']#altear para acesso restrito ao heroku
 
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware', retirado para teste
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -149,4 +149,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-#retirado para teste STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'#arquivos cachaveis e suporte para comprensão de arquivos
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'#arquivos cachaveis e suporte para comprensão de arquivos
+
+django_on_heroku.settings(locals())
